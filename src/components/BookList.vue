@@ -1,16 +1,17 @@
 <template>
-<div>
+  <div>
     <h1>
-        {{ title }}
+      {{ title }}
     </h1>
     <ul>
-        <li>{{ book.title }}:{{ book.author }}</li>
+      <book-item v-for="book in books" :book="book"></book-item>
     </ul>
-</div>
-    
+  </div>
 </template>
 
 <script>
+import BookItem from './BookItem';
+
 export default {
     name: 'BookList',
     data: {
@@ -20,17 +21,21 @@ export default {
             { title: 'American Gods', author: 'Neil Gaiman' },
             { title: 'Amusing Ourselves to Death', author: 'Neil Postman' },
         ]
+    },
+    components: {
+        BookItem
     }
 }
 </script>
 
 <style scoped>
-h1, h2 {
-    font-weight: normal;
+h1,
+h2 {
+  font-weight: normal;
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 </style>
