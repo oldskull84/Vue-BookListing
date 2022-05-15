@@ -3,7 +3,7 @@
     <h1>
       {{ title }}
     </h1>
-    <book-form @addbook="appendBook"></book-form>
+    <book-form @addBook="appendBook"></book-form>
     <ul>
       <book-item v-for="book in books" :book="book" v-bind:key="book.title"></book-item>
     </ul>
