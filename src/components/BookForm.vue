@@ -10,14 +10,14 @@
 export default {
   name: "BookForm",
   props: ["books"],
-  data: {
+  data: function() { return {
     bookTitle: "",
     bookAuthor: "",
-  },
+  }},
   methods: {
       bookSubmit: function(bookTitle, bookAuthor) {
         
-          this.$emit('addBook', bookTitle, bookAuthor);
+          this.$emit('addbook', bookTitle, bookAuthor);
       }
   }
 };
